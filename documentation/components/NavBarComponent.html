@@ -154,6 +154,7 @@
                 <td class="col-md-3">imports</td>
                 <td class="col-md-9">
                             <code>RouterLink</code>
+                            <code>RouterLinkActive</code>
                 </td>
             </tr>
 
@@ -193,12 +194,12 @@
 
     <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
-import { RouterLink } from &#x27;@angular/router&#x27;;
+import { RouterLink, RouterLinkActive } from &#x27;@angular/router&#x27;;
 
 @Component({
   selector: &#x27;app-nav-bar&#x27;,
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, RouterLinkActive],
   templateUrl: &#x27;./nav-bar.component.html&#x27;,
   styleUrl: &#x27;./nav-bar.component.css&#x27;
 })
@@ -209,9 +210,11 @@ export class NavBarComponent {
     </div>
 
     <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;button routerLink&#x3D;&quot;shop&quot;&gt;shop&lt;/button&gt;
-&lt;button routerLink&#x3D;&quot;cart&quot;&gt;cart&lt;/button&gt;
-&lt;button routerLink&#x3D;&quot;counter&quot;&gt;counter&lt;/button&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;join justify-center flex my-4&quot;&gt;
+  &lt;button class&#x3D;&quot;btn btn-info join-item&quot; routerLink&#x3D;&quot;shop&quot; routerLinkActive&#x3D;&quot;btn-active&quot;&gt;shop&lt;/button&gt;
+  &lt;button class&#x3D;&quot;btn btn-info join-item&quot; routerLink&#x3D;&quot;cart&quot; routerLinkActive&#x3D;&quot;btn-active&quot;&gt;cart&lt;/button&gt;
+  &lt;button class&#x3D;&quot;btn btn-info join-item&quot; routerLink&#x3D;&quot;counter&quot; routerLinkActive&#x3D;&quot;btn-active&quot;&gt;counter&lt;/button&gt;
+&lt;/div&gt;
 </code></pre>
     </div>
 
@@ -241,7 +244,7 @@ export class NavBarComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><button routerLink="shop">shop</button><button routerLink="cart">cart</button><button routerLink="counter">counter</button></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="join justify-center flex my-4">  <button class="btn btn-info join-item" routerLink="shop" routerLinkActive="btn-active">shop</button>  <button class="btn btn-info join-item" routerLink="cart" routerLinkActive="btn-active">cart</button>  <button class="btn btn-info join-item" routerLink="counter" routerLinkActive="btn-active">counter</button></div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CartComponent', 'selector': 'app-cart'},{'name': 'CounterComponent', 'selector': 'app-counter'},{'name': 'NavBarComponent', 'selector': 'app-nav-bar'},{'name': 'ShopComponent', 'selector': 'app-shop'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'NavBarComponent'};

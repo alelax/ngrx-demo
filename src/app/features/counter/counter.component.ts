@@ -1,5 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { Store } from '@ngrx/store';
+import { AppState } from '../../app.config';
+import { decrement, increment, reset } from '../../core/store/counter/counter.actions';
+import { selectCounterValue } from '../../core/store/counter/counter.selectors';
 
 @Component({
   selector: 'app-counter',
@@ -9,18 +12,31 @@ import { Store } from '@ngrx/store';
 })
 export default class CounterComponent {
   store = inject(Store);
-  counter = this.store.selectSignal(state => state.counter.value);
+  counter = this.store.selectSignal(selectCounterValue);
 
-  inc() {
-    this.store.dispatch({ type: 'increment' });
+  /**
+   * Increment the counter by 1 unit
+   * @return {void} Dispatch store action to increment counter store by 1
+   *
+   */
+  inc(): void {
+    this.store.dispatch(increment());
   }
 
-  dec() {
-    this.store.dispatch({ type: 'decrement' });
+  /**
+  * Decrement the counter by 1 unit
+  * @return {void} Dispatch store action to decrement counter store by 1
+  * */
+  dec(): void {
+    this.store.dispatch(decrement({ value: 1 }));
   }
 
-  reset() {
-    this.store.dispatch({ type: 'reset' });
+  /**
+   * Reset the counter to 0
+   * @return {void} Dispatch store action to reset counter store
+  * */
+  reset(): void {
+    this.store.dispatch(reset());
   }
 
 }

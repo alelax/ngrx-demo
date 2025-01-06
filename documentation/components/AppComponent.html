@@ -276,8 +276,9 @@ export class AppComponent {
 
     <div class="tab-pane fade " id="templateData">
         <pre class="line-numbers"><code class="language-html">&lt;app-nav-bar /&gt;
-
-&lt;router-outlet&gt;&lt;/router-outlet&gt;
+&lt;div class&#x3D;&quot;max-w-screen-xl mx-6 xl:mx-auto&quot;&gt;
+  &lt;router-outlet&gt;&lt;/router-outlet&gt;
+&lt;/div&gt;
 </code></pre>
     </div>
 
@@ -307,7 +308,7 @@ export class AppComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><app-nav-bar /><router-outlet></router-outlet></div>'
+        var COMPONENT_TEMPLATE = '<div><app-nav-bar /><div class="max-w-screen-xl mx-6 xl:mx-auto">  <router-outlet></router-outlet></div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CartComponent', 'selector': 'app-cart'},{'name': 'CounterComponent', 'selector': 'app-counter'},{'name': 'NavBarComponent', 'selector': 'app-nav-bar'},{'name': 'ShopComponent', 'selector': 'app-shop'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'AppComponent'};

@@ -4,7 +4,12 @@ import { provideRouter } from '@angular/router';
 import { routes } from './app.routes';
 import { provideState, provideStore } from '@ngrx/store';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
-import { counterReducer } from './core/store/counter/counter.reducer';
+import { counterReducer, CounterState } from './core/store/counter/counter.reducer';
+
+export interface AppState {
+  home: number[],
+  counter: CounterState
+}
 
 export const appConfig: ApplicationConfig = {
   providers: [
