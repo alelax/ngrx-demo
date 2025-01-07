@@ -1,3 +1,3 @@
 export const NameSpaceDictionary = {
-  COUNTER: '[Counter]',
-}
+  COUNTER: 'Counter',
+} as const

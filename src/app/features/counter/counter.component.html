@@ -1,4 +1,10 @@
-<p>{{ counter() }}</p>
+<div class="text-xl my-4">Counter: {{ counter() }}</div>
+<div class="text-xl my-4">Multiplier: {{ multiplier() }}</div>
+<div class="text-xl my-4">Total: {{ total() }}</div>
+<div class="text-xl my-4">Extra Total: {{ extraTotal() }}</div>
 <button (click)="inc()" class="btn">+</button>
 <button (click)="dec()" class="btn">-</button>
 <button (click)="reset()" class="btn">reset</button>
+<button (click)="changeMultiplaier(2)" class="btn">Multiplier: 2</button>
+<button (click)="changeMultiplaier(4)" class="btn">Multiplier: 4</button>
+<button (click)="changeMultiplaier(5)" class="btn">Multiplier: 5</button>

@@ -1,8 +1,8 @@
-import { Component, inject } from '@angular/core';
+import { Component, computed, effect, inject, OnInit, signal } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { AppState } from '../../app.config';
-import { decrement, increment, reset } from '../../core/store/counter/counter.actions';
-import { selectCounterValue } from '../../core/store/counter/counter.selectors';
+import { counterActions } from './store/counter.actions';
+import { selectExtraSelectorTotal, selectMultiplier, selectValue } from './store/counter.feature';
+import { selectTotal } from './store/counter.selectors';
 
 @Component({
   selector: 'app-counter',
@@ -11,8 +11,14 @@ import { selectCounterValue } from '../../core/store/counter/counter.selectors';
   styleUrl: './counter.component.css'
 })
 export default class CounterComponent {
+
   store = inject(Store);
-  counter = this.store.selectSignal(selectCounterValue);
+
+  counter = this.store.selectSignal(selectValue);
+  multiplier = this.store.selectSignal(selectMultiplier);
+  total = this.store.selectSignal(selectTotal);
+  extraTotal = this.store.selectSignal(selectExtraSelectorTotal);
+
 
   /**
    * Increment the counter by 1 unit
@@ -20,7 +26,7 @@ export default class CounterComponent {
    *
    */
   inc(): void {
-    this.store.dispatch(increment());
+    this.store.dispatch(counterActions.increment());
   }
 
   /**
@@ -28,7 +34,7 @@ export default class CounterComponent {
   * @return {void} Dispatch store action to decrement counter store by 1
   * */
   dec(): void {
-    this.store.dispatch(decrement({ value: 1 }));
+    this.store.dispatch(counterActions.decrement({ value: 1 }));
   }
 
   /**
@@ -36,7 +42,16 @@ export default class CounterComponent {
    * @return {void} Dispatch store action to reset counter store
   * */
   reset(): void {
-    this.store.dispatch(reset());
+    this.store.dispatch(counterActions.reset());
+  }
+
+  /**
+   * Set multiplier to passed value
+   * @param {number} value
+   * @return {void} Dispatch store action to set multiplier to 5
+   * */
+  changeMultiplaier(value: number) {
+    this.store.dispatch(counterActions.multiplierUpdate({ value }));
   }
 
 }
