@@ -1,3 +1,4 @@
 export const FeatureDictionary = {
-  COUNTER: 'counter'
+  COUNTER: 'counter',
+  PRODUCTS: 'products'
 }

@@ -8,5 +8,8 @@ export const ActionDictionary = {
   INCREMENT: 'increment',
   DECREMENT: 'decrement',
   RESET: 'reset',
-  MULTIPLIER_UPDATE: 'multiplier update'
+  MULTIPLIER_UPDATE: 'multiplier update',
+  LOAD: 'load',
+  LOAD_SUCCESS: 'load success',
+  LOAD_FAIL: 'load fail'
 } as const

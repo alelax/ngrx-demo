@@ -1,4 +1,4 @@
-import { Component, computed, effect, inject, OnInit, signal } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { counterActions } from './store/counter.actions';
 import { selectExtraSelectorTotal, selectMultiplier, selectValue } from './store/counter.feature';
@@ -50,7 +50,7 @@ export default class CounterComponent {
    * @param {number} value
    * @return {void} Dispatch store action to set multiplier to 5
    * */
-  changeMultiplaier(value: number) {
+  changeMultiplier(value: number): void {
     this.store.dispatch(counterActions.multiplierUpdate({ value }));
   }
 
