@@ -16,5 +16,6 @@ export const ActionDictionary = {
   CART_REMOVE_ITEM: 'Remove',
   CART_CLEAR: 'Clear',
   CART_INCREASE_QUANTITY: 'Increase quantity',
-  CART_DECREASE_QUANTITY: 'Decrease quantity'
+  CART_DECREASE_QUANTITY: 'Decrease quantity',
+  CART_LOADED_FROM_LOCAL_STORAGE: 'Loaded from local storage'
 } as const

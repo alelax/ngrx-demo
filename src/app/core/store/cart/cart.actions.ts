@@ -11,5 +11,6 @@ export const CartActions = createActionGroup({
     [ActionDictionary.CART_CLEAR]: emptyProps(),
     [ActionDictionary.CART_INCREASE_QUANTITY]: props<CartProductReferencePayload>(),
     [ActionDictionary.CART_DECREASE_QUANTITY]: props<CartProductReferencePayload>(),
+    [ActionDictionary.CART_LOADED_FROM_LOCAL_STORAGE]: props<CartProductReferencePayload>(),
   }
 })

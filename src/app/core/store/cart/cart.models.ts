@@ -5,6 +5,10 @@ export interface CartItem {
   qty: number
 }
 
+export interface CartList {
+  items: CartItem[]
+}
+
 export interface CartState {
   list: CartItem[]
 }

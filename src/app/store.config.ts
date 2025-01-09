@@ -3,6 +3,7 @@ import { provideEffects } from '@ngrx/effects';
 import { productsFeature } from './core/store/products/products.feature';
 import { cartFeature } from './core/store/cart/cart.feature';
 import * as productsEffects from './core/store/products/products.effects';
+import * as cartEffects from './core/store/cart/cart.effects';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { isDevMode } from '@angular/core';
 
@@ -24,5 +25,5 @@ export const Stores = [
 ]
 
 export const StoreEffects = [
-  provideEffects([productsEffects])
+  provideEffects([productsEffects, cartEffects])
 ]
