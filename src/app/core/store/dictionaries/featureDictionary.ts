@@ -1,4 +1,5 @@
 export const FeatureDictionary = {
   COUNTER: 'counter',
-  PRODUCTS: 'products'
+  PRODUCTS: 'products',
+  CART: 'cart'
 }

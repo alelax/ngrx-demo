@@ -4,9 +4,9 @@
       <figure>
         <img [src]="product.image" [alt]="product.name" /></figure>
       <div class="card-body">
-        <h2 class="card-title">{{product.name}}</h2>
+        <h2 class="card-title">{{ product.name }}</h2>
         <div class="card-actions justify-end">
-          <button class="btn btn-outline btn-primary">Add to Cart  | € {{product.cost}}</button>
+          <button class="btn btn-outline btn-primary" (click)="addProductToCart(product)">Add to Cart  | € {{ product.cost }}</button>
         </div>
       </div>
     </div>

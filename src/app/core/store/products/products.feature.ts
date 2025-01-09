@@ -1,14 +1,7 @@
-import { Product } from '../../../model/product';
 import { createFeature, createReducer, on } from '@ngrx/store';
 import { FeatureDictionary } from '../dictionaries/featureDictionary';
 import { ProductsActions } from './products.actions';
-import { ProductsSuccessLoadAction } from './products.models';
-
-export interface ProductsState {
-  list: Product[];
-  hasError: boolean
-  pending: boolean
-}
+import { ProductsState, ProductsSuccessLoadAction } from './products.models';
 
 const initialState: ProductsState = {
   list: [],
