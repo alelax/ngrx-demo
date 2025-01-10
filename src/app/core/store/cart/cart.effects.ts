@@ -1,8 +1,8 @@
-import { Actions, createEffect, ofType } from '@ngrx/effects';
+import { Actions, createEffect, ofType, rootEffectsInit } from '@ngrx/effects';
 import { inject } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { CartActions } from './cart.actions';
-import { tap } from 'rxjs';
+import { map, tap } from 'rxjs';
 import { selectList } from './cart.feature';
 import { LocalStorageDictionary } from '../../dictionaries/localStorageDictionary';
 
@@ -23,3 +23,17 @@ export const saveCartInLocalStorage = createEffect(() => {
     })
   )
 }, { functional: true, dispatch: false });
+
+
+export const loadCartFromLocalStorage = createEffect(() => {
+  const actions$ = inject(Actions);
+  return actions$.pipe(
+    ofType(rootEffectsInit),
+    map(() => {
+      const cartFromLocalStorage = localStorage.getItem(`${LocalStorageDictionary.PREFIX}-${LocalStorageDictionary.CART_LIST}`);
+      return cartFromLocalStorage
+        ? CartActions.loadedFromLocalStorage({ items: JSON.parse(cartFromLocalStorage) })
+        : CartActions.loadedFromLocalStorage({ items: [] })
+    })
+  )
+}, { functional: true });

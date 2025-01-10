@@ -1,5 +1,5 @@
 import { createFeature, createReducer, createSelector, on } from '@ngrx/store';
-import { CartAddActionPayload, CartProductReferencePayload, CartState } from './cart.models';
+import { CartAddActionPayload, CartList, CartProductReferencePayload, CartState } from './cart.models';
 import { FeatureDictionary } from '../dictionaries/featureDictionary';
 import { CartActions } from './cart.actions';
 import { addProduct, decreaseQuantity, increaseQuantity } from './cart.utils';
@@ -17,6 +17,7 @@ export const cartFeature = createFeature({
     on(CartActions.clear, (state: CartState): CartState => ({ ...state, list: [] })),
     on(CartActions.increaseQuantity, (state: CartState, action: CartProductReferencePayload): CartState => increaseQuantity(state, action)),
     on(CartActions.decreaseQuantity, (state: CartState, action: CartProductReferencePayload): CartState => decreaseQuantity(state, action)),
+    on(CartActions.loadedFromLocalStorage, (state: CartState, action: CartList): CartState => ({ ...state, list: action.items }))
   ),
   extraSelectors: ({ selectList }) => ({
     selectIsCartEmpty: createSelector(
