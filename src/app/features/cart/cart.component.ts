@@ -8,11 +8,12 @@ import {
 } from '../../core/store/cart/cart.feature';
 import { CartActions } from '../../core/store/cart/cart.actions';
 import { CartItem } from '../../core/store/cart/cart.models';
+import { RouterLink } from '@angular/router';
 
 
 @Component({
   selector: 'app-cart',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './cart.component.html',
   styleUrl: './cart.component.css'
 })

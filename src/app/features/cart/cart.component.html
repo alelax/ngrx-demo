@@ -35,8 +35,16 @@
 
   </div>
 
-  <div class="text-xl my-6 font-bold">
-    total:  € {{ totalCartCost() }}
+  <!--  ... cart summary ... -->
+  <div class="flex justify-between my-6 py-6 border-t border-slate-600">
+    <div class="text-3xl my-6 font-bold">
+      total: € {{ totalCartCost() }}
+    </div>
+    <div>
+      <button class="btn btn-lg btn-info" routerLink="/order-form">
+        Proceed
+      </button>
+    </div>
   </div>
 }
 

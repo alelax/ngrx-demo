@@ -24,7 +24,6 @@ export const saveCartInLocalStorage = createEffect(() => {
   )
 }, { functional: true, dispatch: false });
 
-
 export const loadCartFromLocalStorage = createEffect(() => {
   const actions$ = inject(Actions);
   return actions$.pipe(
@@ -37,3 +36,16 @@ export const loadCartFromLocalStorage = createEffect(() => {
     })
   )
 }, { functional: true });
+
+export const clearCartLocalStorage = createEffect((
+    actions$ = inject(Actions),
+  ) => {
+    return actions$.pipe(
+      ofType(CartActions.clear),
+      tap(() => {
+        localStorage.removeItem(`${LocalStorageDictionary.PREFIX}-${LocalStorageDictionary.CART_LIST}`)
+      })
+    );
+  },
+  { functional: true, dispatch: false}
+);

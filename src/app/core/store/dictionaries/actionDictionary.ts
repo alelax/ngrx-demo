@@ -22,4 +22,7 @@ export const ActionDictionary = {
   UI_SIDE_PANEL_OPEN: 'Open SidePanel',
   UI_SIDE_PANEL_CLOSE: 'Close SidePanel',
   UI_SIDE_PANEL_TOGGLE: 'Toggle SidePanel',
+  ORDER_SEND: 'Send',
+  ORDER_SEND_SUCCESS: 'Send success',
+  ORDER_SEND_FAIL: 'Send fail',
 } as const
