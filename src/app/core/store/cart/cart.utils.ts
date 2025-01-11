@@ -1,6 +1,5 @@
 import {
   CartAddActionPayload,
-  CartItem,
   CartProductReferencePayload,
   CartState
 } from './cart.models';
