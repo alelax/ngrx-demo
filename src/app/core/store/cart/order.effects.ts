@@ -28,7 +28,7 @@ export const sendOrderSuccess = createEffect((
       ofType(OrderActions.sendSuccess),
       map(() => CartActions.clear()),
       tap(() => {
-        router.navigateByUrl('/shop')
+        router.navigateByUrl('/shop').then()
       })
     );
   },

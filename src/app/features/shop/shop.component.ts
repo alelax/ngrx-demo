@@ -25,7 +25,7 @@ export default class ShopComponent implements OnInit {
   filters = this.store.selectSignal<ShopFilters>(selectShopFiltersState);
 
   ngOnInit() {
-    this.store.dispatch(ProductsActions.load());
+    this.store.dispatch(ProductsActions.loadProduct());
   }
 
   protected addProductToCart(product: Product) {
