@@ -8,12 +8,18 @@ import {
   selectPending
 } from '../../core/store/products/products.feature';
 import { Product } from '../../model/product';
-import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import { CmsProductsBarComponent } from './components/cms-products-bar/cms-products-bar.component';
+import { CmsProductsListComponent } from './components/cms-products-list/cms-products-list.component';
+import { CmsProductsModalComponent } from './components/cms-products-modal/cms-products-modal.component';
 
 @Component({
   selector: 'app-cms',
   imports: [
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CmsProductsBarComponent,
+    CmsProductsListComponent,
+    CmsProductsModalComponent
   ],
   templateUrl: './cms.component.html',
   styleUrl: './cms.component.css'
@@ -21,56 +27,35 @@ import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 export default class CmsComponent implements OnInit {
 
   store = inject(Store);
-  fb = inject(FormBuilder);
 
   products = this.store.selectSignal<Product[]>(selectList);
+  onEditProduct = this.store.selectSignal<Partial<Product> | null>(selectOnEditProduct);
   pending = this.store.selectSignal<boolean>(selectPending);
   error = this.store.selectSignal<boolean>(selectHasError);
-  isModalOpened = this.store.selectSignal(selectIsPanelOpened);
-  onEditProduct = this.store.selectSignal(selectOnEditProduct);
-
-  form = this.fb.nonNullable.group({
-    name: ['', [Validators.required]]
-  })
+  isModalOpened = this.store.selectSignal<boolean>(selectIsPanelOpened);
 
   ngOnInit() {
     this.store.dispatch(ProductsActions.loadProduct());
   }
 
-  protected deleteProduct(product: Product, evt: MouseEvent) {
-    evt.stopPropagation();
+  protected deleteProduct(product: Product) {
     this.store.dispatch(ProductsActions.deleteProduct({ id: product.id }));
   }
 
   protected openModalToAddProduct() {
     this.store.dispatch(ProductsActions.openProductModalAdd());
-    this.form.reset();
   }
 
   protected openModalToEditProduct(product: Product) {
     this.store.dispatch(ProductsActions.openProductModalEdit({ item: product }));
-    this.form.patchValue(product);
   }
 
   protected closeModal() {
     this.store.dispatch(ProductsActions.closeProductModal());
   }
 
-  protected save() {
-    if (this.onEditProduct()) this.editProduct()
-    else this.addProduct();
-  }
-
-  private editProduct() {
-    const editProduct: Partial<Product> = {
-      ...this.form.value,
-      id: this.onEditProduct()?.id
-    }
-    this.store.dispatch(ProductsActions.editProduct({ item: editProduct }));
-  }
-
-  private addProduct() {
-    this.store.dispatch(ProductsActions.addProduct({ item: this.form.value }))
+  protected save(product: Partial<Product>) {
+    this.store.dispatch(ProductsActions.saveProduct({ item: product }));
   }
 
 }

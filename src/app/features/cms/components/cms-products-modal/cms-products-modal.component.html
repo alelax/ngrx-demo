@@ -1,0 +1,16 @@
+<dialog class="modal" [open]="isModalOpened()">
+  <div class="modal-box">
+    <h3 class="font-bold text-2lg my-3">
+      {{ onEditProduct() ? 'EDIT' : 'ADD' }} ITEM
+    </h3>
+    <form [formGroup]="form" (submit)="saveProduct.emit(form.value)" class="flex flex-col gap-3">
+      <input
+        type="text" placeholder="Product name" formControlName="name" class="input input-bordered w-full max-w-xs"
+      />
+      <div class="flex gap-2">
+        <button class="btn" type="button" (click)="closeModal.emit()">Close</button>
+        <button class="btn" type="submit" [disabled]="form.invalid">Save</button>
+      </div>
+    </form>
+  </div>
+</dialog>

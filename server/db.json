@@ -116,10 +116,6 @@
       "cost": 2,
       "image": "https://res.cloudinary.com/my-notes-demo/image/upload/v1712217749/tutorial-content/video-corsi/ngrx/image-keychains/stickers-fb.jpg",
       "type": "plastic"
-    },
-    {
-      "name": "Prodotto X",
-      "id": 17
     }
   ],
   "orders": []
