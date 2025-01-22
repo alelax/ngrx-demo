@@ -3,5 +3,6 @@ export const FeatureDictionary = {
   PRODUCTS: 'products',
   CART: 'cart',
   SHOP_FILTERS: 'shopFilters',
-  UI: 'ui'
+  UI: 'ui',
+  AUTH: 'auth',
 }

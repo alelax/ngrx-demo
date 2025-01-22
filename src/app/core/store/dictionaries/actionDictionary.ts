@@ -43,4 +43,13 @@ export const ActionDictionary = {
   ORDER_SEND: 'Send',
   ORDER_SEND_SUCCESS: 'Send success',
   ORDER_SEND_FAIL: 'Send fail',
+
+  AUTH_LOGIN: 'Login',
+  AUTH_LOGIN_SUCCESS: 'Login success',
+  AUTH_LOGIN_FAIL: 'Login fail',
+  AUTH_LOGOUT: 'Logout',
+  AUTH_GET_PROFILE: 'Get profile',
+  AUTH_GET_PROFILE_SUCCESS: 'Get profile success',
+  AUTH_GET_PROFILE_FAIL: 'Get profile fail'
+
 } as const

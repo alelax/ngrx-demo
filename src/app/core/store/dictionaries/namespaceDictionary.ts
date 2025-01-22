@@ -4,5 +4,6 @@ export const NameSpaceDictionary = {
   CART: 'Cart',
   SHOP_FILTERS: 'Shop Filters',
   UI: 'UI',
-  ORDER: 'Order'
+  ORDER: 'Order',
+  AUTH: 'Auth'
 } as const
