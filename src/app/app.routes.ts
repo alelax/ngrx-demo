@@ -19,5 +19,6 @@ export const routes: Routes = [
     canActivate: [orderExistGuard]
   },
   { path: 'cms', loadComponent: () => import('./features/cms/cms.component')},
+  { path: 'login', loadComponent: () => import('./features/login/login.component')},
   { path: '', redirectTo: 'shop', pathMatch: 'full' }
 ];
