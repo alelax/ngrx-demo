@@ -1,4 +1,10 @@
 {
+  "login": {
+    "token": "abc123"
+  },
+  "profile": {
+    "displayName": "Ale L"
+  },
   "category": [
     "wood",
     "plastic",

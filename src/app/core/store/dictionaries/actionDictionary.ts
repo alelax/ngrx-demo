@@ -50,6 +50,7 @@ export const ActionDictionary = {
   AUTH_LOGOUT: 'Logout',
   AUTH_GET_PROFILE: 'Get profile',
   AUTH_GET_PROFILE_SUCCESS: 'Get profile success',
-  AUTH_GET_PROFILE_FAIL: 'Get profile fail'
+  AUTH_GET_PROFILE_FAIL: 'Get profile fail',
+  AUTH_INITIALIZE: 'Initialize'
 
 } as const

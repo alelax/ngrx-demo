@@ -9,6 +9,8 @@ import { uiFeature } from './core/store/ui/ui.feature';
 import * as productsEffects from './core/store/products/products.effects';
 import * as cartEffects from './core/store/cart/cart.effects';
 import * as orderEffects from './core/store/cart/order.effects';
+import * as authEffects from './core/store/auth/auth.effects';
+import { authFeature } from './core/store/auth/auth.feature';
 
 export const StoreSettings = [
   provideStore({}, {
@@ -26,13 +28,15 @@ export const Stores = [
   provideState(productsFeature),
   provideState(cartFeature),
   provideState(shopFiltersFeature),
-  provideState(uiFeature)
+  provideState(uiFeature),
+  provideState(authFeature)
 ]
 
 export const StoreEffects = [
   provideEffects([
     productsEffects,
     cartEffects,
-    orderEffects
+    orderEffects,
+    authEffects
   ])
 ]

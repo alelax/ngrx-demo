@@ -12,5 +12,6 @@ export const AuthActions = createActionGroup({
     [ActionDictionary.AUTH_GET_PROFILE]: props<{ token: string }>(),
     [ActionDictionary.AUTH_GET_PROFILE_SUCCESS]: props<{ displayName: string }>(),
     [ActionDictionary.AUTH_GET_PROFILE_FAIL]: emptyProps(),
+    [ActionDictionary.AUTH_INITIALIZE]: props<{ token: string | null, displayName: string | null }>(),
   }
 })

@@ -6,8 +6,13 @@
     <a class="btn btn-ghost text-xl" routerLink="shop">NGRX Shop</a>
   </div>
   <div class="flex gap-2">
-    <a routerLink="/cms">cms</a>
-    <a routerLink="/login">login</a>
+    @if (isLogged()) {
+      <a routerLink="/cms">cms</a>
+      <div>{{ displayName() }}</div>
+      <button (click)="logout()">Quit</button>
+    } @else {
+      <a routerLink="/login">login</a>
+    }
   </div>
 
   <!-- Shopping Cart Badge -->
