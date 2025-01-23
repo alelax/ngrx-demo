@@ -124,5 +124,38 @@
       "type": "plastic"
     }
   ],
-  "orders": []
+  "orders": [
+    {
+      "user": {
+        "email": "asdasd",
+        "address": "asd",
+        "city": "sad",
+        "state": "asd",
+        "zip": "asd"
+      },
+      "cart": [
+        {
+          "product": {
+            "id": 3,
+            "name": "Angular #1",
+            "cost": 3,
+            "image": "https://res.cloudinary.com/my-notes-demo/image/upload/v1712149827/tutorial-content/video-corsi/ngrx/image-keychains/angular-1.jpg",
+            "type": "wood"
+          },
+          "qty": 4
+        },
+        {
+          "product": {
+            "id": 4,
+            "name": "Angular #2",
+            "cost": 3,
+            "image": "https://res.cloudinary.com/my-notes-demo/image/upload/v1712149828/tutorial-content/video-corsi/ngrx/image-keychains/angular-2.jpg",
+            "type": "wood"
+          },
+          "qty": 3
+        }
+      ],
+      "id": 1
+    }
+  ]
 }
