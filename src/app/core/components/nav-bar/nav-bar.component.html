@@ -6,13 +6,12 @@
     <a class="btn btn-ghost text-xl" routerLink="shop">NGRX Shop</a>
   </div>
   <div class="flex gap-2">
-    @if (isLogged()) {
+    <ng-container *appIfLogged>
       <a routerLink="/cms">cms</a>
       <div>{{ displayName() }}</div>
       <button (click)="logout()">Quit</button>
-    } @else {
-      <a routerLink="/login">login</a>
-    }
+    </ng-container>
+    <a routerLink="/login" *appIfLogged="true">login</a>
   </div>
 
   <!-- Shopping Cart Badge -->

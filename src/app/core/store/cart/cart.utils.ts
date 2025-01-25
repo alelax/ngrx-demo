@@ -21,7 +21,6 @@ export const increaseQuantity = (state: CartState, action: CartProductReferenceP
 export const decreaseQuantity = (state: CartState, action: CartProductReferencePayload): CartState => {
   const productAlreadyInCart = state.list.find(item => item.product.id === action.id);
   return productAlreadyInCart && productAlreadyInCart.qty > 1
-    ? { ...state, list: state.list.map(item => item.product.id === action.id ? { ...item, qty: item.qty - 1 } : item)}
+    ? { ...state, list: state.list.map(item => item.product.id === action.id ? { ...item, qty: item.qty - 1 } : item )}
     : { ...state, list: state.list.filter( item => item.product.id !== action.id) }
 }
-
