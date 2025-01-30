@@ -122,6 +122,23 @@
       "cost": 2,
       "image": "https://res.cloudinary.com/my-notes-demo/image/upload/v1712217749/tutorial-content/video-corsi/ngrx/image-keychains/stickers-fb.jpg",
       "type": "plastic"
+    },
+    {
+      "id": 17
+    },
+    {
+      "PageSize": 100,
+      "IdCliente": 314,
+      "id": 18
+    },
+    {
+      "id": 19
+    },
+    {
+      "id": 20
+    },
+    {
+      "id": 21
     }
   ],
   "orders": [

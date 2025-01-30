@@ -8,8 +8,9 @@
     <table class="table">
 
       <tbody>
-        @for (item of cartList(); track item.product.id) {
-          <tr>
+        <!-- @for (item of cartList(); track item.product.id) { -->
+        @for (item of cartservice.values(); track item.product.id) {
+            <tr>
             <th>
               <img [src]="item.product.image" [alt]="item.product.name" width="100">
             </th>

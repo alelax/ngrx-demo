@@ -1,0 +1,1 @@
+export const EG_UI_KIT = "eg-lib";
